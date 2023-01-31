@@ -1,5 +1,7 @@
 import React from "react";
 
+import { getFriendlyDate } from "../../helpers/Date";
+
 export default function PostListItem(props) {
   return (
     <div className="user-blog__posts-item">
@@ -8,7 +10,7 @@ export default function PostListItem(props) {
       </div>
       <h2 className="user-blog__posts-item-title">{props.title}</h2>
       <div className="user-blog__posts-date">
-        Publicado em {props.createdAt}
+        Publicado em {getFriendlyDate(props.createdAt)}
       </div>
       <div className="user-blog__post-content">{props.content}</div>
     </div>
