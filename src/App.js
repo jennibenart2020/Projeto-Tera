@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./components/pages/Home";
-import Users from "./components/pages/Users";
-import UserBlog from "./components/pages/UserBlog";
-import CreatePost from "./components/pages/CreatePost";
+import Social from "./components/pages/Social";
+import Perfil from "./components/pages/Perfil";
+import Amigos from "./components/pages/Amigos";
+import VerPerfil from "./components/pages/VerPerfil";
 
-import "./styles/normalize.css";
-import "./styles/fontawesome.min.css";
+import "./styles/bootstrap.min.css";
 import "./styles/main.css";
 
 function App() {
@@ -14,9 +14,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/users/:userId" element={<UserBlog />} />
-        <Route path="/users/:userId/posts/new" element={<CreatePost />} />
+        <Route path="/social/:userId" element={<Social />} />
+        <Route path="/amigos/:userId" element={<Amigos />} />
+        <Route path="/perfil/:userId" element={<Perfil />} />
+        <Route path="/verperfil/:userId" element={<VerPerfil />} />
       </Routes>
     </BrowserRouter>
   );

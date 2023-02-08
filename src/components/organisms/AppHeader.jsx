@@ -1,19 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
-import logo from "../../images/logo.svg";
+import DrawerMenu from "../molecules/DrawerMenu";
 
 export default function AppHeader(props) {
-  return (
-    <div className="app-header">
-      <div className="app-header__logo">
-        <Link to="/">
-          <img src={logo} className="responsive" alt="" />
-        </Link>
-      </div>
-      <div className="app-header__menu">
-        <i onClick={() => props.setOpen(true)} className="fa fa-bars"></i>
-      </div>
-    </div>
-  );
+    const [open, setOpen] = React.useState(false);
+    return (
+        <header>
+            <DrawerMenu open={open} setOpen={setOpen} />
+        </header>
+    );
 }
